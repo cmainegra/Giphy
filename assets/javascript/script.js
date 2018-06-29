@@ -1,6 +1,7 @@
 $(document).ready(function () {
   $("button").on("click", function () {
-    var input = $("#data-input").val();
+    var input = $(this).attr("data-input");
+    console.log(input);
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
       input + "&api_key=iZUd4TnqSidctRLrT3nT3kTTfDoYFfoL";
     $.ajax({
