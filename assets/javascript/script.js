@@ -1,8 +1,8 @@
 $(document).ready(function () {
   $("button").on("click", function () {
-    var animal = $("#data-animal").val();
+    var input = $("#data-input").val();
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-      animal + "&api_key=iZUd4TnqSidctRLrT3nT3kTTfDoYFfoL";
+      input + "&api_key=iZUd4TnqSidctRLrT3nT3kTTfDoYFfoL";
     $.ajax({
       url: queryURL,
       method: "GET"
@@ -11,11 +11,11 @@ $(document).ready(function () {
         console.log(response);
         var results = response.data;
         for (var i = 0; i < 10; i++) {
-          var animalDiv = $(".column");
-          var animalImage = $("#images");
-          animalImage.attr("src", results[i].images.fixed_height.url);
-          animalDiv.append(animalImage);
-          $(".gifs-appear-here").prepend(animalDiv);
+          var inputDiv = $(".column");
+          var inputImage = $("#images");
+          inputImage.attr("src", results[i].images.fixed_height.url);
+          inputDiv.append(inputImage);
+          $(".gifs-appear-here").prepend(inputDiv);
         }
       });
   });
